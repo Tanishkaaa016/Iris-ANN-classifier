@@ -1,6 +1,4 @@
 ![Python](https://img.shields.io/badge/Python-3.9-blue) ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.12-orange) ![Flask](https://img.shields.io/badge/Flask-WebApp-black) ![License](https://img.shields.io/badge/License-MIT-green) ![Status](https://img.shields.io/badge/Project-Complete-brightgreen)
-## 🌐 Web App Preview
-![App Screenshot](<img width="1440" height="900" alt="Screenshot 2026-04-21 at 1 57 58 AM" src="https://github.com/user-attachments/assets/5f2a8732-3a12-41ad-82f8-cefb70c6261e" />)
 # 🌸 ANN Iris Classifier
 
 An interactive machine learning project that demonstrates how an Artificial Neural Network (ANN) can classify iris flower species based on morphological features.
