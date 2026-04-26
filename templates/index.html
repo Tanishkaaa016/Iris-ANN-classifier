@@ -7,18 +7,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #050810;
-    --surface: #0c1120;
-    --surface2: #111827;
-    --border: #1e2d4a;
-    --accent: #4fffb0;
-    --accent2: #7c6fff;
-    --accent3: #ff6b6b;
-    --text: #e2e8f0;
-    --muted: #64748b;
-    --setosa: #4fffb0;
-    --versicolor: #7c6fff;
-    --virginica: #ff6b6b;
+    --bg: #faf7f2;
+    --surface: #ffffff;
+    --surface2: #f3ede4;
+    --border: #e8ddd0;
+    --accent: #c026d3;
+    --accent2: #0284c7;
+    --accent3: #ea580c;
+    --accent4: #65a30d;
+    --text: #1c1410;
+    --muted: #8a7968;
+    --setosa: #c026d3;
+    --versicolor: #0284c7;
+    --virginica: #ea580c;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,8 +37,8 @@
     content: '';
     position: fixed; inset: 0;
     background-image:
-      linear-gradient(rgba(78,255,176,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(78,255,176,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(192,38,211,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(192,38,211,0.06) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
@@ -76,7 +77,7 @@
     position: absolute;
     width: 600px; height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(78,255,176,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(192,38,211,0.08) 0%, transparent 70%);
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     animation: pulse 4s ease-in-out infinite;
@@ -89,8 +90,8 @@
 
   .badge {
     display: inline-block;
-    background: rgba(78,255,176,0.1);
-    border: 1px solid rgba(78,255,176,0.3);
+    background: rgba(192,38,211,0.08);
+    border: 1px solid rgba(192,38,211,0.25);
     color: var(--accent);
     font-family: 'Space Mono', monospace;
     font-size: 11px;
@@ -142,7 +143,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: var(--accent);
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
   }
 
   .stat-pill .num {
@@ -246,7 +247,7 @@
 
   .species-card:hover {
     border-color: var(--c);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.3), 0 0 0 1px var(--c) inset;
+    box-shadow: 0 8px 32px rgba(28,20,16,0.1), 0 0 0 1px var(--c) inset;
   }
 
   .species-card::before {
@@ -378,7 +379,7 @@
     left: 10%;
     right: 10%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent2), var(--accent), transparent);
   }
 
   .pipe-step {
@@ -400,8 +401,8 @@
     transition: border-color 0.3s, box-shadow 0.3s;
   }
 
-  .pipe-icon.active { border-color: var(--accent); box-shadow: 0 0 20px rgba(78,255,176,0.2); }
-  .pipe-icon.active2 { border-color: var(--accent2); box-shadow: 0 0 20px rgba(124,111,255,0.2); }
+  .pipe-icon.active { border-color: var(--accent); box-shadow: 0 0 20px rgba(192,38,211,0.15); }
+  .pipe-icon.active2 { border-color: var(--accent2); box-shadow: 0 0 20px rgba(2,132,199,0.15); }
 
   .pipe-step h3 { font-size: 0.85rem; font-weight: 700; margin-bottom: 4px; }
   .pipe-step p { font-size: 0.72rem; color: var(--muted); }
@@ -419,7 +420,7 @@
   .network-container::before {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 50%, rgba(124,111,255,0.05), transparent 70%);
+    background: radial-gradient(ellipse at 50% 50%, rgba(2,132,199,0.04), transparent 70%);
   }
 
   #networkCanvas {
@@ -491,7 +492,7 @@
   }
 
   .dot { width: 12px; height: 12px; border-radius: 50%; }
-  .dot.r { background: #ff6b6b; }
+  .dot.r { background: #ea580c; }
   .dot.y { background: #ffd93d; }
   .dot.g { background: var(--accent); }
 
@@ -508,14 +509,16 @@
     font-size: 0.78rem;
     line-height: 1.8;
     overflow-x: auto;
+    background: #fdf9f6;
+    color: #1c1410;
   }
 
-  .kw { color: #7c6fff; }
-  .fn { color: #4fffb0; }
-  .str { color: #ffd93d; }
-  .cm { color: #475569; font-style: italic; }
-  .num { color: #ff6b6b; }
-  .cls { color: #f9a8d4; }
+  .kw { color: #0284c7; }
+  .fn { color: #c026d3; }
+  .str { color: #65a30d; }
+  .cm { color: #a87c5a; font-style: italic; }
+  .num { color: #ea580c; }
+  .cls { color: #9333ea; }
 
   /* ─── TRAINING CHART ─── */
   .chart-grid {
@@ -571,8 +574,8 @@
 
   .matrix-cell:hover { transform: scale(1.05); }
   .matrix-cell.header { background: transparent; color: var(--muted); font-size: 0.65rem; }
-  .matrix-cell.diag { background: rgba(78,255,176,0.2); color: var(--accent); border: 1px solid rgba(78,255,176,0.3); }
-  .matrix-cell.off { background: rgba(255,107,107,0.08); color: var(--muted); border: 1px solid rgba(255,107,107,0.1); }
+  .matrix-cell.diag { background: rgba(192,38,211,0.1); color: var(--accent); border: 1px solid rgba(192,38,211,0.25); }
+  .matrix-cell.off { background: rgba(234,88,12,0.05); color: var(--muted); border: 1px solid rgba(234,88,12,0.12); }
 
   .matrix-legend {
     flex: 1;
@@ -614,7 +617,7 @@
     transition: border-color 0.3s, transform 0.2s;
   }
 
-  .metric-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+  .metric-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(28,20,16,0.08); }
 
   .metric-card::after {
     content: '';
@@ -688,7 +691,7 @@
     border-radius: 50%;
     background: var(--accent);
     cursor: pointer;
-    box-shadow: 0 0 8px rgba(78,255,176,0.4);
+    box-shadow: 0 0 8px rgba(192,38,211,0.3);
   }
 
   .range-val {
@@ -699,8 +702,8 @@
   }
 
   .predict-btn {
-    background: var(--accent);
-    color: #050810;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #ffffff;
     border: none;
     padding: 14px 32px;
     font-family: 'Syne', sans-serif;
@@ -715,9 +718,9 @@
   }
 
   .predict-btn:hover {
-    background: #fff;
+    background: linear-gradient(135deg, #1c1410, var(--accent));
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(78,255,176,0.3);
+    box-shadow: 0 6px 20px rgba(192,38,211,0.25);
   }
 
   .result-display {
@@ -832,29 +835,776 @@
 
   .arch-table td {
     padding: 14px 16px;
-    border-bottom: 1px solid rgba(30,45,74,0.5);
+    border-bottom: 1px solid var(--border);
     vertical-align: middle;
   }
 
-  .arch-table tr:hover td { background: rgba(78,255,176,0.03); }
+  .arch-table tr:hover td { background: rgba(192,38,211,0.03); }
 
   .arch-table .layer-name { color: var(--accent2); font-weight: 700; }
   .arch-table .neurons { color: var(--accent); }
-  .arch-table .activation { color: #ffd93d; }
+  .arch-table .activation { color: var(--accent4); }
   .arch-table .params { color: var(--muted); }
 
-  .tag {
-    display: inline-block;
-    background: rgba(78,255,176,0.1);
-    border: 1px solid rgba(78,255,176,0.2);
+  /* ─── ARCH VISUAL ─── */
+  .arch-visual, .prep-visual {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .arch-vis-header {
+    background: var(--surface2);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .arch-vis-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  .arch-vis-hint {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
     color: var(--accent);
-    padding: 2px 8px;
-    border-radius: 2px;
+    opacity: 0.7;
+    letter-spacing: 1px;
+  }
+
+  .arch-layers-container {
+    display: flex;
+    align-items: stretch;
+    padding: 32px 24px;
+    gap: 0;
+    overflow-x: auto;
+  }
+
+  .arch-layer-block {
+    flex: 1;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding: 20px 12px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .arch-layer-block:hover {
+    background: rgba(255,255,255,0.03);
+    border-color: var(--border);
+  }
+
+  .arch-layer-block:hover .arch-layer-pill {
+    transform: scale(1.05);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+
+  .arch-layer-connector {
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    padding-top: 0;
+    margin-top: 20px;
+  }
+
+  .arch-layer-connector svg {
+    width: 40px;
+    opacity: 0.4;
+  }
+
+  .arch-layer-pill {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .arch-layer-pill::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid;
+    opacity: 0.3;
+  }
+
+  .arch-layer-name {
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  .arch-layer-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .arch-layer-neurons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .arch-neuron-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+  }
+
+  .arch-layer-block:hover .arch-neuron-dot {
+    opacity: 1;
+    animation: neuronPulse 0.6s ease infinite alternate;
+  }
+
+  @keyframes neuronPulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.3); }
+  }
+
+  .arch-layer-params {
+    font-family: 'Space Mono', monospace;
     font-size: 0.65rem;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.05);
+    color: var(--muted);
+  }
+
+  .arch-flow-legend {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+  }
+
+  .afl-item { display: flex; align-items: center; gap: 6px; }
+  .afl-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .afl-arrow { color: var(--border); font-size: 1rem; }
+
+  /* ─── PREP VISUAL ─── */
+  .prep-steps {
+    display: flex;
+    align-items: center;
+    padding: 24px 24px 0;
+    gap: 0;
+    overflow-x: auto;
+  }
+
+  .prep-step {
+    flex: 1;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+  }
+
+  .prep-step.active {
+    background: rgba(192,38,211,0.06);
+    border-color: rgba(192,38,211,0.25);
+  }
+
+  .prep-step:hover:not(.active) {
+    background: rgba(255,255,255,0.03);
+    border-color: var(--border);
+  }
+
+  .prep-step-icon { font-size: 1.4rem; }
+
+  .prep-step-name {
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: var(--text);
+  }
+
+  .prep-step.active .prep-step-name { color: var(--accent); }
+
+  .prep-step-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+  }
+
+  .prep-connector {
+    width: 32px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--border), var(--accent));
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  .prep-detail-panel {
+    padding: 24px;
+    position: relative;
+  }
+
+  .prep-detail { display: none; }
+  .prep-detail.active { display: block; animation: fadeUp 0.35s ease; }
+
+  .prep-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .prep-detail-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1px solid;
+  }
+
+  .prep-detail-code {
+    background: #fdf9f6;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+    color: #1c1410;
+  }
+
+  .prep-detail-facts {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .prep-fact {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 80px;
+  }
+
+  .prep-fact-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .prep-fact-val {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .prep-minibar-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .prep-minibars { display: flex; flex-direction: column; gap: 8px; }
+
+  .prep-minibar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+  }
+
+  .prep-minibar-row > span:first-child { width: 80px; text-align: right; }
+  .prep-minibar-row > span:last-child { width: 28px; color: var(--muted); }
+
+  .prep-minibar-track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .prep-minibar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.8s ease;
+  }
+
+  .prep-split-vis { margin-bottom: 16px; }
+
+  .prep-split-bar {
+    display: flex;
+    height: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .prep-split-train {
+    background: rgba(192,38,211,0.12);
+    border: 1px solid rgba(192,38,211,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .prep-split-test {
+    background: rgba(234,88,12,0.1);
+    border: 1px solid rgba(234,88,12,0.25);
+    border-left: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent3);
+    font-weight: 700;
+  }
+
+  .prep-split-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+  }
+
+  .prep-scaler-vis {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  .prep-scaler-col { flex: 1; min-width: 180px; }
+
+  .prep-scaler-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .prep-scaler-bars { display: flex; flex-direction: column; gap: 7px; }
+
+  .prep-scaler-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+  }
+
+  .prep-scaler-bar-row > span:first-child { width: 18px; }
+
+  .prep-scaler-track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .prep-scaler-fill {
+    height: 100%;
+    border-radius: 3px;
+  }
+
+  .prep-scaler-range {
+    width: 68px;
+    text-align: right;
+    font-size: 0.6rem;
+  }
+
+  /* ─── TEAM CARDS ─── */
+  .team-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .team-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+
+  .team-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--tc), transparent);
+  }
+
+  .team-card::after {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--tc) 10%, transparent), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  .team-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--tc);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px color-mix(in srgb, var(--tc) 30%, transparent) inset;
+  }
+
+  .team-card:hover::after { opacity: 1; }
+
+  .team-avatar {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--tc) 15%, transparent);
+    border: 1.5px solid var(--tc);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--tc);
+    flex-shrink: 0;
+    box-shadow: 0 0 16px color-mix(in srgb, var(--tc) 20%, transparent);
+  }
+
+  .team-info { flex: 1; }
+
+  .team-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+
+  .team-reg {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  .team-flower {
+    width: 40px; height: 40px;
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: opacity 0.3s, transform 0.5s ease;
+  }
+
+  .team-card:hover .team-flower {
+    opacity: 1;
+    transform: rotate(36deg) scale(1.1);
+  }
+
+  /* ─── PROFESSOR CARD ─── */
+  .prof-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .prof-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 0% 50%, rgba(192,38,211,0.04), transparent 60%),
+                radial-gradient(ellipse at 100% 50%, rgba(2,132,199,0.04), transparent 60%);
+    pointer-events: none;
+  }
+
+  .prof-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .prof-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .prof-avatar {
+    width: 64px; height: 64px;
+    flex-shrink: 0;
+  }
+
+  .prof-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+  }
+
+  .prof-title {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+  }
+
+  .prof-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .prof-tag {
+    background: rgba(192,38,211,0.08);
+    border: 1px solid rgba(192,38,211,0.2);
+    color: var(--accent);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    padding: 3px 10px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+  }
+
+  /* ─── STICKY NAV ─── */
+  .site-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(250,247,242,0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s, background 0.3s;
+  }
+
+  .site-nav.scrolled {
+    box-shadow: 0 2px 24px rgba(28,20,16,0.08);
+    background: rgba(250,247,242,0.97);
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--text);
+    text-decoration: none;
+    flex-shrink: 0;
+    letter-spacing: -0.3px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    margin-left: auto;
+    flex-wrap: nowrap;
+  }
+
+  .nav-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+
+  .nav-link:hover {
+    color: var(--text);
+    background: var(--surface2);
+    border-color: var(--border);
+  }
+
+  .nav-link.active {
+    color: var(--accent);
+    background: rgba(192,38,211,0.07);
+    border-color: rgba(192,38,211,0.2);
+  }
+
+  .nav-link--highlight {
+    background: var(--accent) !important;
+    color: #fff !important;
+    border-color: transparent !important;
+    font-weight: 700;
+    padding: 6px 14px;
+  }
+
+  .nav-link--highlight:hover {
+    background: #a21caf !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(192,38,211,0.3);
+  }
+
+  .nav-link--highlight.active {
+    background: var(--accent) !important;
+    color: #fff !important;
+  }
+
+  .nav-progress-bar {
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    margin-left: auto;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.25s;
+  }
+
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .hero { margin-top: 56px; }
+  section { scroll-margin-top: 72px; }
+
+  @media (max-width: 760px) {
+    .nav-hamburger { display: flex; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 57px; left: 0; right: 0;
+      background: rgba(250,247,242,0.98);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      flex-direction: column;
+      padding: 12px 16px 16px;
+      gap: 4px;
+      box-shadow: 0 8px 24px rgba(28,20,16,0.1);
+    }
+    .nav-links.open { display: flex; }
+    .nav-link { font-size: 0.8rem; padding: 10px 14px; }
   }
 </style>
 </head>
 <body>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><ellipse cx="11" cy="5" rx="3" ry="5" fill="rgba(192,38,211,0.2)" stroke="#c026d3" stroke-width="1.2"/><ellipse cx="11" cy="5" rx="3" ry="5" fill="rgba(192,38,211,0.2)" stroke="#c026d3" stroke-width="1.2" transform="rotate(72 11 11)"/><ellipse cx="11" cy="5" rx="3" ry="5" fill="rgba(192,38,211,0.2)" stroke="#c026d3" stroke-width="1.2" transform="rotate(144 11 11)"/><ellipse cx="11" cy="5" rx="3" ry="5" fill="rgba(192,38,211,0.2)" stroke="#c026d3" stroke-width="1.2" transform="rotate(216 11 11)"/><ellipse cx="11" cy="5" rx="3" ry="5" fill="rgba(192,38,211,0.2)" stroke="#c026d3" stroke-width="1.2" transform="rotate(288 11 11)"/><circle cx="11" cy="11" r="3" fill="#c026d3"/></svg>
+      <span>Iris ANN</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#dataset"      class="nav-link" data-section="dataset">Dataset</a></li>
+      <li><a href="#pipeline"     class="nav-link" data-section="pipeline">Pipeline</a></li>
+      <li><a href="#architecture" class="nav-link" data-section="architecture">Architecture</a></li>
+      <li><a href="#preprocessing"class="nav-link" data-section="preprocessing">Preprocessing</a></li>
+      <li><a href="#training"     class="nav-link" data-section="training">Training</a></li>
+      <li><a href="#results"      class="nav-link" data-section="results">Results</a></li>
+      <li><a href="#predictor"    class="nav-link nav-link--highlight" data-section="predictor">Try it →</a></li>
+      <li><a href="#team"         class="nav-link" data-section="team">Team</a></li>
+    </ul>
+  </div>
+  <div class="nav-progress-bar" id="navProgress"></div>
+</nav>
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
 <div class="hero">
@@ -867,7 +1617,7 @@
       <span class="num">100%</span>
       <span class="label">Test Accuracy</span>
     </div>
-    <div class="stat-pill" style="--accent:#7c6fff">
+    <div class="stat-pill" style="--accent:var(--accent2)">
       <span class="num" style="color:var(--accent2)">50</span>
       <span class="label">Epochs</span>
     </div>
@@ -888,7 +1638,7 @@
 <hr class="divider">
 
 <!-- ═══════════════════ ABOUT IRIS ═══════════════════ -->
-<section>
+<section id="dataset">
   <p class="section-label reveal">00 — Dataset</p>
   <h2 class="reveal reveal-delay-1">About the Iris Dataset</h2>
 
@@ -900,12 +1650,12 @@
     <!-- SETOSA -->
     <div class="species-card setosa reveal reveal-delay-1">
       <svg class="species-flower" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="32" cy="14" rx="7" ry="12" fill="rgba(79,255,176,0.15)" stroke="#4fffb0" stroke-width="1.5"/>
-        <ellipse cx="32" cy="14" rx="7" ry="12" fill="rgba(79,255,176,0.15)" stroke="#4fffb0" stroke-width="1.5" transform="rotate(72 32 32)"/>
-        <ellipse cx="32" cy="14" rx="7" ry="12" fill="rgba(79,255,176,0.15)" stroke="#4fffb0" stroke-width="1.5" transform="rotate(144 32 32)"/>
-        <ellipse cx="32" cy="14" rx="7" ry="12" fill="rgba(79,255,176,0.15)" stroke="#4fffb0" stroke-width="1.5" transform="rotate(216 32 32)"/>
-        <ellipse cx="32" cy="14" rx="7" ry="12" fill="rgba(79,255,176,0.15)" stroke="#4fffb0" stroke-width="1.5" transform="rotate(288 32 32)"/>
-        <circle cx="32" cy="32" r="6" fill="#4fffb0" opacity="0.9"/>
+        <ellipse cx="32" cy="14" rx="7" ry="12" fill="rgba(192,38,211,0.12)" stroke="#c026d3" stroke-width="1.5"/>
+        <ellipse cx="32" cy="14" rx="7" ry="12" fill="rgba(192,38,211,0.12)" stroke="#c026d3" stroke-width="1.5" transform="rotate(72 32 32)"/>
+        <ellipse cx="32" cy="14" rx="7" ry="12" fill="rgba(192,38,211,0.12)" stroke="#c026d3" stroke-width="1.5" transform="rotate(144 32 32)"/>
+        <ellipse cx="32" cy="14" rx="7" ry="12" fill="rgba(192,38,211,0.12)" stroke="#c026d3" stroke-width="1.5" transform="rotate(216 32 32)"/>
+        <ellipse cx="32" cy="14" rx="7" ry="12" fill="rgba(192,38,211,0.12)" stroke="#c026d3" stroke-width="1.5" transform="rotate(288 32 32)"/>
+        <circle cx="32" cy="32" r="6" fill="#c026d3" opacity="0.9"/>
         <circle cx="32" cy="32" r="3" fill="#050810"/>
       </svg>
       <div class="species-name">Iris Setosa</div>
@@ -934,12 +1684,12 @@
     <!-- VERSICOLOR -->
     <div class="species-card versicolor reveal reveal-delay-2">
       <svg class="species-flower" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="32" cy="12" rx="8" ry="14" fill="rgba(124,111,255,0.15)" stroke="#7c6fff" stroke-width="1.5"/>
-        <ellipse cx="32" cy="12" rx="8" ry="14" fill="rgba(124,111,255,0.15)" stroke="#7c6fff" stroke-width="1.5" transform="rotate(72 32 32)"/>
-        <ellipse cx="32" cy="12" rx="8" ry="14" fill="rgba(124,111,255,0.15)" stroke="#7c6fff" stroke-width="1.5" transform="rotate(144 32 32)"/>
-        <ellipse cx="32" cy="12" rx="8" ry="14" fill="rgba(124,111,255,0.15)" stroke="#7c6fff" stroke-width="1.5" transform="rotate(216 32 32)"/>
-        <ellipse cx="32" cy="12" rx="8" ry="14" fill="rgba(124,111,255,0.15)" stroke="#7c6fff" stroke-width="1.5" transform="rotate(288 32 32)"/>
-        <circle cx="32" cy="32" r="6" fill="#7c6fff" opacity="0.9"/>
+        <ellipse cx="32" cy="12" rx="8" ry="14" fill="rgba(2,132,199,0.12)" stroke="#0284c7" stroke-width="1.5"/>
+        <ellipse cx="32" cy="12" rx="8" ry="14" fill="rgba(2,132,199,0.12)" stroke="#0284c7" stroke-width="1.5" transform="rotate(72 32 32)"/>
+        <ellipse cx="32" cy="12" rx="8" ry="14" fill="rgba(2,132,199,0.12)" stroke="#0284c7" stroke-width="1.5" transform="rotate(144 32 32)"/>
+        <ellipse cx="32" cy="12" rx="8" ry="14" fill="rgba(2,132,199,0.12)" stroke="#0284c7" stroke-width="1.5" transform="rotate(216 32 32)"/>
+        <ellipse cx="32" cy="12" rx="8" ry="14" fill="rgba(2,132,199,0.12)" stroke="#0284c7" stroke-width="1.5" transform="rotate(288 32 32)"/>
+        <circle cx="32" cy="32" r="6" fill="#0284c7" opacity="0.9"/>
         <circle cx="32" cy="32" r="3" fill="#050810"/>
       </svg>
       <div class="species-name">Iris Versicolor</div>
@@ -968,12 +1718,12 @@
     <!-- VIRGINICA -->
     <div class="species-card virginica reveal reveal-delay-3">
       <svg class="species-flower" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="32" cy="10" rx="9" ry="16" fill="rgba(255,107,107,0.15)" stroke="#ff6b6b" stroke-width="1.5"/>
-        <ellipse cx="32" cy="10" rx="9" ry="16" fill="rgba(255,107,107,0.15)" stroke="#ff6b6b" stroke-width="1.5" transform="rotate(72 32 32)"/>
-        <ellipse cx="32" cy="10" rx="9" ry="16" fill="rgba(255,107,107,0.15)" stroke="#ff6b6b" stroke-width="1.5" transform="rotate(144 32 32)"/>
-        <ellipse cx="32" cy="10" rx="9" ry="16" fill="rgba(255,107,107,0.15)" stroke="#ff6b6b" stroke-width="1.5" transform="rotate(216 32 32)"/>
-        <ellipse cx="32" cy="10" rx="9" ry="16" fill="rgba(255,107,107,0.15)" stroke="#ff6b6b" stroke-width="1.5" transform="rotate(288 32 32)"/>
-        <circle cx="32" cy="32" r="6" fill="#ff6b6b" opacity="0.9"/>
+        <ellipse cx="32" cy="10" rx="9" ry="16" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="1.5"/>
+        <ellipse cx="32" cy="10" rx="9" ry="16" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="1.5" transform="rotate(72 32 32)"/>
+        <ellipse cx="32" cy="10" rx="9" ry="16" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="1.5" transform="rotate(144 32 32)"/>
+        <ellipse cx="32" cy="10" rx="9" ry="16" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="1.5" transform="rotate(216 32 32)"/>
+        <ellipse cx="32" cy="10" rx="9" ry="16" fill="rgba(234,88,12,0.12)" stroke="#ea580c" stroke-width="1.5" transform="rotate(288 32 32)"/>
+        <circle cx="32" cy="32" r="6" fill="#ea580c" opacity="0.9"/>
         <circle cx="32" cy="32" r="3" fill="#050810"/>
       </svg>
       <div class="species-name">Iris Virginica</div>
@@ -1035,7 +1785,7 @@
 <hr class="divider">
 
 <!-- ═══════════════════ PIPELINE ═══════════════════ -->
-<section>
+<section id="pipeline">
   <p class="section-label reveal">01 — Workflow</p>
   <h2 class="reveal reveal-delay-1">Data Pipeline</h2>
   <div class="pipeline">
@@ -1075,7 +1825,7 @@
 <hr class="divider">
 
 <!-- ═══════════════════ NETWORK ARCHITECTURE ═══════════════════ -->
-<section>
+<section id="architecture">
   <p class="section-label reveal">02 — Architecture</p>
   <h2 class="reveal reveal-delay-1">Neural Network Structure</h2>
 
@@ -1088,36 +1838,29 @@
       <div class="layer-label"><span class="name">OUTPUT</span><span class="detail">3 neurons<br>Softmax activation</span></div>
     </div>
     <div class="network-legend">
-      <span><span class="legend-dot-sm" style="background:#4fffb0; box-shadow:0 0 6px #4fffb0"></span>Input Layer</span>
-      <span><span class="legend-dot-sm" style="background:#7c6fff; box-shadow:0 0 6px #7c6fff"></span>Hidden Layers</span>
-      <span><span class="legend-dot-sm" style="background:#ff6b6b; box-shadow:0 0 6px #ff6b6b"></span>Output Layer</span>
-      <span><span class="legend-line-sm" style="background: linear-gradient(90deg, #4fffb0, #7c6fff)"></span>Signal propagation</span>
+      <span><span class="legend-dot-sm" style="background:#0284c7; box-shadow:0 0 6px rgba(2,132,199,0.4)"></span>Input Layer</span>
+      <span><span class="legend-dot-sm" style="background:#c026d3; box-shadow:0 0 6px rgba(192,38,211,0.4)"></span>Hidden Layers</span>
+      <span><span class="legend-dot-sm" style="background:#ea580c; box-shadow:0 0 6px rgba(234,88,12,0.4)"></span>Output Layer</span>
+      <span><span class="legend-line-sm" style="background: linear-gradient(90deg, #0284c7, #c026d3)"></span>Signal propagation</span>
     </div>
   </div>
 
-  <div class="code-card reveal reveal-delay-1" style="margin-bottom:32px;">
-    <div class="code-header">
-      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-      <span class="code-title">model_architecture.py</span>
+  <div class="arch-visual reveal reveal-delay-1" style="margin-bottom:32px;">
+    <div class="arch-vis-header">
+      <span class="arch-vis-title">model_architecture.py — Interactive Layer View</span>
+      <span class="arch-vis-hint">Hover layers to inspect</span>
     </div>
-    <div class="code-body">
-<span class="cm"># Build ANN Model</span>
-<span class="kw">from</span> tensorflow.keras.models <span class="kw">import</span> <span class="cls">Sequential</span>
-<span class="kw">from</span> tensorflow.keras.layers <span class="kw">import</span> <span class="cls">Dense</span>
-
-model = <span class="cls">Sequential</span>([
-    <span class="cls">Dense</span>(<span class="num">10</span>, activation=<span class="str">'relu'</span>, input_shape=(<span class="num">4</span>,)),   <span class="cm"># Hidden Layer 1</span>
-    <span class="cls">Dense</span>(<span class="num">8</span>,  activation=<span class="str">'relu'</span>),                        <span class="cm"># Hidden Layer 2</span>
-    <span class="cls">Dense</span>(<span class="num">3</span>,  activation=<span class="str">'softmax'</span>)                      <span class="cm"># Output Layer</span>
-])
-
-model.<span class="fn">compile</span>(
-    optimizer=<span class="str">'adam'</span>,
-    loss=<span class="str">'sparse_categorical_crossentropy'</span>,
-    metrics=[<span class="str">'accuracy'</span>]
-)
-
-model.<span class="fn">fit</span>(X_train, y_train, epochs=<span class="num">50</span>, batch_size=<span class="num">5</span>)
+    <div class="arch-layers-container" id="archLayers">
+      <!-- Layers rendered by JS -->
+    </div>
+    <div class="arch-flow-legend">
+      <span class="afl-item"><span class="afl-dot" style="background:var(--accent2)"></span>Input (4)</span>
+      <span class="afl-arrow">→</span>
+      <span class="afl-item"><span class="afl-dot" style="background:var(--accent)"></span>Dense_1 ReLU (10)</span>
+      <span class="afl-arrow">→</span>
+      <span class="afl-item"><span class="afl-dot" style="background:var(--accent)"></span>Dense_2 ReLU (8)</span>
+      <span class="afl-arrow">→</span>
+      <span class="afl-item"><span class="afl-dot" style="background:var(--accent3)"></span>Output Softmax (3)</span>
     </div>
   </div>
 
@@ -1161,7 +1904,7 @@ model.<span class="fn">fit</span>(X_train, y_train, epochs=<span class="num">50<
           <td class="activation">Softmax</td>
           <td class="params">27 (8×3 + 3 bias)</td>
         </tr>
-        <tr style="background:rgba(78,255,176,0.03)">
+        <tr style="background:rgba(192,38,211,0.04)">
           <td colspan="4" style="color:var(--muted); font-size:0.7rem; letter-spacing:1px; text-transform:uppercase;">Total Trainable Parameters</td>
           <td class="neurons" style="font-weight:700">165</td>
         </tr>
@@ -1173,36 +1916,128 @@ model.<span class="fn">fit</span>(X_train, y_train, epochs=<span class="num">50<
 <hr class="divider">
 
 <!-- ═══════════════════ PREPROCESSING CODE ═══════════════════ -->
-<section>
+<section id="preprocessing">
   <p class="section-label reveal">03 — Preprocessing</p>
   <h2 class="reveal reveal-delay-1">Data Preprocessing</h2>
-  <div class="code-card reveal reveal-delay-2">
-    <div class="code-header">
-      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-      <span class="code-title">preprocessing.py</span>
+  <div class="prep-visual reveal reveal-delay-2">
+    <div class="arch-vis-header">
+      <span class="arch-vis-title">preprocessing.py — Data Flow Visualizer</span>
+      <span class="arch-vis-hint">Click steps to explore</span>
     </div>
-    <div class="code-body">
-<span class="kw">import</span> numpy <span class="kw">as</span> np
-<span class="kw">from</span> sklearn.datasets <span class="kw">import</span> <span class="fn">load_iris</span>
-<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="fn">train_test_split</span>
-<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">StandardScaler</span>
-
-<span class="cm"># Step 1: Load the Iris dataset</span>
+    <div class="prep-steps" id="prepSteps">
+      <div class="prep-step active" data-step="0" onclick="selectPrepStep(0)">
+        <div class="prep-step-icon">📦</div>
+        <div class="prep-step-name">Load Dataset</div>
+        <div class="prep-step-sub">sklearn.datasets</div>
+      </div>
+      <div class="prep-connector"></div>
+      <div class="prep-step" data-step="1" onclick="selectPrepStep(1)">
+        <div class="prep-step-icon">✂️</div>
+        <div class="prep-step-name">Train/Test Split</div>
+        <div class="prep-step-sub">80% / 20%</div>
+      </div>
+      <div class="prep-connector"></div>
+      <div class="prep-step" data-step="2" onclick="selectPrepStep(2)">
+        <div class="prep-step-icon">⚖️</div>
+        <div class="prep-step-name">StandardScaler</div>
+        <div class="prep-step-sub">μ=0, σ=1</div>
+      </div>
+      <div class="prep-connector"></div>
+      <div class="prep-step" data-step="3" onclick="selectPrepStep(3)">
+        <div class="prep-step-icon">🧠</div>
+        <div class="prep-step-name">Feed to ANN</div>
+        <div class="prep-step-sub">X_train normalized</div>
+      </div>
+    </div>
+    <div class="prep-detail-panel" id="prepDetailPanel">
+      <div class="prep-detail active" id="prep-detail-0">
+        <div class="prep-detail-header"><span class="prep-detail-badge" style="background:rgba(2,132,199,0.1);color:var(--accent2);border-color:rgba(2,132,199,0.25)">STEP 1</span> Load Iris Dataset</div>
+        <div class="prep-detail-code"><span class="kw">from</span> sklearn.datasets <span class="kw">import</span> <span class="fn">load_iris</span>
 iris = <span class="fn">load_iris</span>()
-X = iris.data      <span class="cm"># Shape: (150, 4) — sepal/petal length & width</span>
-y = iris.target    <span class="cm"># 0=Setosa, 1=Versicolor, 2=Virginica</span>
-
-<span class="cm"># Step 2: Split into training (80%) and testing (20%) sets</span>
+X = iris.data   <span class="cm"># shape: (150, 4)</span>
+y = iris.target <span class="cm"># 0=Setosa, 1=Versicolor, 2=Virginica</span></div>
+        <div class="prep-detail-facts">
+          <div class="prep-fact"><span class="prep-fact-label">Rows</span><span class="prep-fact-val" style="color:var(--accent2)">150</span></div>
+          <div class="prep-fact"><span class="prep-fact-label">Features</span><span class="prep-fact-val" style="color:var(--accent)">4</span></div>
+          <div class="prep-fact"><span class="prep-fact-label">Classes</span><span class="prep-fact-val" style="color:var(--accent3)">3</span></div>
+          <div class="prep-fact"><span class="prep-fact-label">Balance</span><span class="prep-fact-val" style="color:var(--accent4)">Equal</span></div>
+        </div>
+        <div class="prep-minibar-label">Samples per class</div>
+        <div class="prep-minibars">
+          <div class="prep-minibar-row"><span style="color:var(--setosa)">Setosa</span><div class="prep-minibar-track"><div class="prep-minibar-fill" style="width:100%;background:var(--setosa)"></div></div><span>50</span></div>
+          <div class="prep-minibar-row"><span style="color:var(--versicolor)">Versicolor</span><div class="prep-minibar-track"><div class="prep-minibar-fill" style="width:100%;background:var(--versicolor)"></div></div><span>50</span></div>
+          <div class="prep-minibar-row"><span style="color:var(--virginica)">Virginica</span><div class="prep-minibar-track"><div class="prep-minibar-fill" style="width:100%;background:var(--virginica)"></div></div><span>50</span></div>
+        </div>
+      </div>
+      <div class="prep-detail" id="prep-detail-1">
+        <div class="prep-detail-header"><span class="prep-detail-badge" style="background:rgba(192,38,211,0.1);color:var(--accent);border-color:rgba(192,38,211,0.25)">STEP 2</span> Train / Test Split</div>
+        <div class="prep-detail-code"><span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="fn">train_test_split</span>
 X_train, X_test, y_train, y_test = <span class="fn">train_test_split</span>(
     X, y, test_size=<span class="num">0.2</span>, random_state=<span class="num">42</span>
 )
-<span class="cm"># Train: 120 samples | Test: 30 samples</span>
-
-<span class="cm"># Step 3: Normalize features using StandardScaler</span>
-<span class="cm"># Fit ONLY on training data to prevent data leakage</span>
+<span class="cm"># Train: 120 samples | Test: 30 samples</span></div>
+        <div class="prep-split-vis">
+          <div class="prep-split-bar">
+            <div class="prep-split-train" style="width:80%"><span>TRAIN · 120</span></div>
+            <div class="prep-split-test" style="width:20%"><span>TEST · 30</span></div>
+          </div>
+          <div class="prep-split-labels">
+            <span style="color:var(--accent)">80% training data</span>
+            <span style="color:var(--accent3)">20% test data</span>
+          </div>
+        </div>
+        <div class="prep-detail-facts">
+          <div class="prep-fact"><span class="prep-fact-label">Train</span><span class="prep-fact-val" style="color:var(--accent)">120</span></div>
+          <div class="prep-fact"><span class="prep-fact-label">Test</span><span class="prep-fact-val" style="color:var(--accent3)">30</span></div>
+          <div class="prep-fact"><span class="prep-fact-label">Seed</span><span class="prep-fact-val" style="color:var(--muted)">42</span></div>
+          <div class="prep-fact"><span class="prep-fact-label">Shuffle</span><span class="prep-fact-val" style="color:var(--accent4)">Yes</span></div>
+        </div>
+      </div>
+      <div class="prep-detail" id="prep-detail-2">
+        <div class="prep-detail-header"><span class="prep-detail-badge" style="background:rgba(101,163,13,0.1);color:var(--accent4);border-color:rgba(101,163,13,0.25)">STEP 3</span> Feature Normalization</div>
+        <div class="prep-detail-code"><span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">StandardScaler</span>
 scaler = <span class="cls">StandardScaler</span>()
-X_train = scaler.<span class="fn">fit_transform</span>(X_train)   <span class="cm"># μ=0, σ=1</span>
-X_test  = scaler.<span class="fn">transform</span>(X_test)        <span class="cm"># Apply same scale</span>
+X_train = scaler.<span class="fn">fit_transform</span>(X_train) <span class="cm"># fit+scale</span>
+X_test  = scaler.<span class="fn">transform</span>(X_test)       <span class="cm"># scale only</span></div>
+        <div class="prep-scaler-vis">
+          <div class="prep-scaler-col">
+            <div class="prep-scaler-label">Raw Feature Range</div>
+            <div class="prep-scaler-bars">
+              <div class="prep-scaler-bar-row"><span>SL</span><div class="prep-scaler-track"><div class="prep-scaler-fill" style="width:76%;background:var(--muted)"></div></div><span class="prep-scaler-range">4.3–7.9</span></div>
+              <div class="prep-scaler-bar-row"><span>SW</span><div class="prep-scaler-track"><div class="prep-scaler-fill" style="width:50%;background:var(--muted)"></div></div><span class="prep-scaler-range">2.0–4.4</span></div>
+              <div class="prep-scaler-bar-row"><span>PL</span><div class="prep-scaler-track"><div class="prep-scaler-fill" style="width:99%;background:var(--muted)"></div></div><span class="prep-scaler-range">1.0–6.9</span></div>
+              <div class="prep-scaler-bar-row"><span>PW</span><div class="prep-scaler-track"><div class="prep-scaler-fill" style="width:50%;background:var(--muted)"></div></div><span class="prep-scaler-range">0.1–2.5</span></div>
+            </div>
+          </div>
+          <div class="prep-scaler-arrow">→</div>
+          <div class="prep-scaler-col">
+            <div class="prep-scaler-label">Normalized (μ=0, σ=1)</div>
+            <div class="prep-scaler-bars">
+              <div class="prep-scaler-bar-row"><span>SL</span><div class="prep-scaler-track"><div class="prep-scaler-fill" style="width:50%;background:var(--accent4)"></div></div><span class="prep-scaler-range">−2 to +2</span></div>
+              <div class="prep-scaler-bar-row"><span>SW</span><div class="prep-scaler-track"><div class="prep-scaler-fill" style="width:50%;background:var(--accent4)"></div></div><span class="prep-scaler-range">−2 to +2</span></div>
+              <div class="prep-scaler-bar-row"><span>PL</span><div class="prep-scaler-track"><div class="prep-scaler-fill" style="width:50%;background:var(--accent4)"></div></div><span class="prep-scaler-range">−2 to +2</span></div>
+              <div class="prep-scaler-bar-row"><span>PW</span><div class="prep-scaler-track"><div class="prep-scaler-fill" style="width:50%;background:var(--accent4)"></div></div><span class="prep-scaler-range">−2 to +2</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--muted);margin-top:12px;">⚠ Scaler fit on training data only — prevents data leakage into test set</div>
+      </div>
+      <div class="prep-detail" id="prep-detail-3">
+        <div class="prep-detail-header"><span class="prep-detail-badge" style="background:rgba(234,88,12,0.1);color:var(--accent3);border-color:rgba(234,88,12,0.25)">STEP 4</span> Feed Normalized Data to ANN</div>
+        <div class="prep-detail-code"><span class="cm"># Data is now ready for the network</span>
+model.<span class="fn">fit</span>(
+    X_train,  <span class="cm"># normalized (120, 4)</span>
+    y_train,  <span class="cm"># labels (120,)</span>
+    epochs=<span class="num">50</span>,
+    batch_size=<span class="num">5</span>
+)</div>
+        <div class="prep-detail-facts">
+          <div class="prep-fact"><span class="prep-fact-label">Input Shape</span><span class="prep-fact-val" style="color:var(--accent2)">(120, 4)</span></div>
+          <div class="prep-fact"><span class="prep-fact-label">Epochs</span><span class="prep-fact-val" style="color:var(--accent)">50</span></div>
+          <div class="prep-fact"><span class="prep-fact-label">Batch</span><span class="prep-fact-val" style="color:var(--accent3)">5</span></div>
+          <div class="prep-fact"><span class="prep-fact-label">Optimizer</span><span class="prep-fact-val" style="color:var(--accent4)">Adam</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1210,7 +2045,7 @@ X_test  = scaler.<span class="fn">transform</span>(X_test)        <span class="c
 <hr class="divider">
 
 <!-- ═══════════════════ TRAINING HISTORY ═══════════════════ -->
-<section>
+<section id="training">
   <p class="section-label reveal">04 — Training</p>
   <h2 class="reveal reveal-delay-1">Training History</h2>
   <div class="chart-grid reveal reveal-delay-2">
@@ -1228,7 +2063,7 @@ X_test  = scaler.<span class="fn">transform</span>(X_test)        <span class="c
 <hr class="divider">
 
 <!-- ═══════════════════ RESULTS ═══════════════════ -->
-<section>
+<section id="results">
   <p class="section-label reveal">05 — Evaluation</p>
   <h2 class="reveal reveal-delay-1">Model Results</h2>
 
@@ -1268,13 +2103,13 @@ X_test  = scaler.<span class="fn">transform</span>(X_test)        <span class="c
 
         <div class="matrix-cell header" style="color:var(--versicolor); font-size:0.6rem;">Versic.</div>
         <div class="matrix-cell off">0</div>
-        <div class="matrix-cell diag" style="background:rgba(124,111,255,0.2); color:var(--versicolor); border-color:rgba(124,111,255,0.3);">9</div>
+        <div class="matrix-cell diag" style="background:rgba(2,132,199,0.1); color:var(--versicolor); border-color:rgba(2,132,199,0.25);">9</div>
         <div class="matrix-cell off">0</div>
 
         <div class="matrix-cell header" style="color:var(--virginica); font-size:0.6rem;">Virgin.</div>
         <div class="matrix-cell off">0</div>
         <div class="matrix-cell off">0</div>
-        <div class="matrix-cell diag" style="background:rgba(255,107,107,0.2); color:var(--virginica); border-color:rgba(255,107,107,0.3);">11</div>
+        <div class="matrix-cell diag" style="background:rgba(234,88,12,0.1); color:var(--virginica); border-color:rgba(234,88,12,0.25);">11</div>
       </div>
     </div>
     <div class="matrix-legend">
@@ -1307,7 +2142,7 @@ X_test  = scaler.<span class="fn">transform</span>(X_test)        <span class="c
 <hr class="divider">
 
 <!-- ═══════════════════ LIVE PREDICTOR ═══════════════════ -->
-<section>
+<section id="predictor">
   <p class="section-label reveal">06 — Interactive</p>
   <h2 class="reveal reveal-delay-1">Live Classifier</h2>
   <p style="color:var(--muted); margin-bottom:32px; max-width:560px;" class="reveal reveal-delay-2">Simulate the ANN model. Adjust the four Iris measurements below and the classifier updates in real time.</p>
@@ -1344,8 +2179,123 @@ X_test  = scaler.<span class="fn">transform</span>(X_test)        <span class="c
 
 <hr class="divider">
 
+<hr class="divider">
+
+<!-- ═══════════════════ TEAM ═══════════════════ -->
+<section id="team">
+  <p class="section-label reveal">07 — Team</p>
+  <h2 class="reveal reveal-delay-1">The People Behind It</h2>
+  <p class="iris-intro-text reveal reveal-delay-2">
+    This project was developed as part of the Neural Networks &amp; Pattern Recognition course, presented to <strong>Dr. Varshini Karthik</strong>.
+  </p>
+
+  <div class="team-cards">
+    <div class="team-card reveal reveal-delay-1">
+      <div class="team-avatar" style="--tc:#e879f9">N</div>
+      <div class="team-info">
+        <div class="team-name">Niharika Kumari</div>
+        <div class="team-reg">RA2411060010001</div>
+      </div>
+      <div class="team-flower">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(232,121,249,0.2)" stroke="#e879f9" stroke-width="1"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(232,121,249,0.2)" stroke="#e879f9" stroke-width="1" transform="rotate(72 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(232,121,249,0.2)" stroke="#e879f9" stroke-width="1" transform="rotate(144 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(232,121,249,0.2)" stroke="#e879f9" stroke-width="1" transform="rotate(216 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(232,121,249,0.2)" stroke="#e879f9" stroke-width="1" transform="rotate(288 20 20)"/>
+          <circle cx="20" cy="20" r="4" fill="#e879f9" opacity="0.9"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="team-card reveal reveal-delay-2">
+      <div class="team-avatar" style="--tc:#38bdf8">A</div>
+      <div class="team-info">
+        <div class="team-name">Akash S</div>
+        <div class="team-reg">RA2411060010002</div>
+      </div>
+      <div class="team-flower">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="1"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="1" transform="rotate(72 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="1" transform="rotate(144 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="1" transform="rotate(216 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="1" transform="rotate(288 20 20)"/>
+          <circle cx="20" cy="20" r="4" fill="#38bdf8" opacity="0.9"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="team-card reveal reveal-delay-3">
+      <div class="team-avatar" style="--tc:#fb923c">R</div>
+      <div class="team-info">
+        <div class="team-name">Rinal Richard</div>
+        <div class="team-reg">RA2411060010003</div>
+      </div>
+      <div class="team-flower">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(251,146,60,0.2)" stroke="#fb923c" stroke-width="1"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(251,146,60,0.2)" stroke="#fb923c" stroke-width="1" transform="rotate(72 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(251,146,60,0.2)" stroke="#fb923c" stroke-width="1" transform="rotate(144 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(251,146,60,0.2)" stroke="#fb923c" stroke-width="1" transform="rotate(216 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(251,146,60,0.2)" stroke="#fb923c" stroke-width="1" transform="rotate(288 20 20)"/>
+          <circle cx="20" cy="20" r="4" fill="#fb923c" opacity="0.9"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="team-card reveal reveal-delay-4">
+      <div class="team-avatar" style="--tc:#a3e635">T</div>
+      <div class="team-info">
+        <div class="team-name">Tanishka Bajpai</div>
+        <div class="team-reg">RA2411060010004</div>
+      </div>
+      <div class="team-flower">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(163,230,53,0.2)" stroke="#a3e635" stroke-width="1"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(163,230,53,0.2)" stroke="#a3e635" stroke-width="1" transform="rotate(72 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(163,230,53,0.2)" stroke="#a3e635" stroke-width="1" transform="rotate(144 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(163,230,53,0.2)" stroke="#a3e635" stroke-width="1" transform="rotate(216 20 20)"/>
+          <ellipse cx="20" cy="8" rx="4" ry="7" fill="rgba(163,230,53,0.2)" stroke="#a3e635" stroke-width="1" transform="rotate(288 20 20)"/>
+          <circle cx="20" cy="20" r="4" fill="#a3e635" opacity="0.9"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professor card -->
+  <div class="prof-card reveal reveal-delay-2">
+    <div class="prof-label">PRESENTED TO</div>
+    <div class="prof-content">
+      <div class="prof-avatar">
+        <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="28" cy="28" r="27" stroke="url(#profGrad)" stroke-width="1.5"/>
+          <circle cx="28" cy="22" r="9" fill="rgba(192,38,211,0.1)" stroke="#c026d3" stroke-width="1.2"/>
+          <path d="M10 46 Q28 34 46 46" fill="rgba(232,121,249,0.1)" stroke="#e879f9" stroke-width="1.2"/>
+          <defs>
+            <linearGradient id="profGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#e879f9"/>
+              <stop offset="100%" stop-color="#38bdf8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="prof-info">
+        <div class="prof-name">Dr. Varshini Karthik</div>
+        <div class="prof-title">Neural Networks &amp; Pattern Recognition</div>
+        <div class="prof-tags">
+          <span class="prof-tag">Pattern Recognition</span>
+          <span class="prof-tag">ANN</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
 <footer>
-  Built for <span>Neural Networks & Pattern Recognition</span> · ANN on Iris Dataset · TensorFlow / Keras / scikit-learn
+  Built by <span>Niharika · Akash · Rinal · Tanishka</span> · Presented to Dr. Varshini Karthik · ANN on Iris Dataset · TensorFlow / Keras / scikit-learn
 </footer>
 
 <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
@@ -1382,8 +2332,8 @@ const chartDefaults = {
     animation: { duration: 1500, easing: 'easeInOutQuart' },
     plugins: { legend: { display: false } },
     scales: {
-      x: { grid: { color: 'rgba(30,45,74,0.5)' }, ticks: { color: '#64748b', font: { family: 'Space Mono', size: 10 } } },
-      y: { grid: { color: 'rgba(30,45,74,0.5)' }, ticks: { color: '#64748b', font: { family: 'Space Mono', size: 10 } } }
+      x: { grid: { color: 'rgba(232,221,208,0.8)' }, ticks: { color: '#8a7968', font: { family: 'Space Mono', size: 10 } } },
+      y: { grid: { color: 'rgba(232,221,208,0.8)' }, ticks: { color: '#8a7968', font: { family: 'Space Mono', size: 10 } } }
     }
   }
 };
@@ -1394,8 +2344,8 @@ new Chart(document.getElementById('accChart'), {
     labels: epochs,
     datasets: [{
       data: accData,
-      borderColor: '#4fffb0',
-      backgroundColor: 'rgba(78,255,176,0.05)',
+      borderColor: '#c026d3',
+      backgroundColor: 'rgba(192,38,211,0.05)',
       fill: true, tension: 0.4, pointRadius: 0, borderWidth: 2
     }]
   },
@@ -1411,8 +2361,8 @@ new Chart(document.getElementById('lossChart'), {
     labels: epochs,
     datasets: [{
       data: lossData,
-      borderColor: '#7c6fff',
-      backgroundColor: 'rgba(124,111,255,0.05)',
+      borderColor: '#0284c7',
+      backgroundColor: 'rgba(2,132,199,0.05)',
       fill: true, tension: 0.4, pointRadius: 0, borderWidth: 2
     }]
   }
@@ -1423,7 +2373,7 @@ new Chart(document.getElementById('lossChart'), {
 // ══════════════════════════════════════════════════
 const layers = [4, 10, 8, 3];
 const displayLayers = layers.map(n => Math.min(n, 6));
-const layerColors = ['#4fffb0', '#7c6fff', '#7c6fff', '#ff6b6b'];
+const layerColors = ['#0284c7', '#c026d3', '#c026d3', '#ea580c'];
 
 let nodePos = [];       // nodePos[layer][node] = {x, y}
 let nodeGlow = [];      // nodeGlow[layer][node] = brightness 0–1
@@ -1475,7 +2425,7 @@ function buildLayout() {
 
 function triggerForwardPass(sourceClass) {
   // sourceClass: 0=setosa(green), 1=versicolor(purple), 2=virginica(red)
-  const classColors = ['#4fffb0', '#7c6fff', '#ff6b6b'];
+  const classColors = ['#c026d3', '#0284c7', '#ea580c'];
   const col = classColors[sourceClass !== undefined ? sourceClass : Math.floor(Math.random() * 3)];
 
   // Kick off from all input nodes simultaneously, slight stagger
@@ -1558,8 +2508,8 @@ function animate(ts) {
         ctx.moveTo(p1.x, p1.y);
         ctx.lineTo(p2.x, p2.y);
         ctx.strokeStyle = flash > 0.05
-          ? `rgba(255,255,255,${alpha})`
-          : `rgba(100,116,139,${alpha})`;
+          ? `rgba(28,20,16,${alpha})`
+          : `rgba(138,121,104,${alpha})`;
         ctx.lineWidth = flash > 0.05 ? 1 : 0.5;
         ctx.stroke();
       }
@@ -1625,7 +2575,7 @@ function animate(ts) {
 
     ctx.beginPath();
     ctx.arc(cx, cy, s.size, 0, Math.PI * 2);
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = '#1c1410';
     ctx.fill();
   }
 
@@ -1657,14 +2607,14 @@ function animate(ts) {
       ctx.beginPath();
       ctx.arc(x, y, 10, 0, Math.PI * 2);
       ctx.fillStyle = glow > 0.1
-        ? `rgba(12,17,32,${1 - glow * 0.5})`
-        : '#0c1120';
+        ? `rgba(250,247,242,${1 - glow * 0.5})`
+        : '#faf7f2';
       ctx.fill();
 
       // Node border
       ctx.beginPath();
       ctx.arc(x, y, 10, 0, Math.PI * 2);
-      ctx.strokeStyle = glow > 0.05 ? '#ffffff' : color;
+      ctx.strokeStyle = glow > 0.05 ? '#1c1410' : color;
       ctx.lineWidth = 1.5 + glow * 1.5;
       ctx.globalAlpha = 0.6 + glow * 0.4;
       ctx.stroke();
@@ -1737,7 +2687,7 @@ function predict() {
 
   const probs = classify(sl, sw, pl, pw);
   const species = ['Iris Setosa', 'Iris Versicolor', 'Iris Virginica'];
-  const colors = ['#4fffb0', '#7c6fff', '#ff6b6b'];
+  const colors = ['#c026d3', '#0284c7', '#ea580c'];
   const maxIdx = probs.indexOf(Math.max(...probs));
 
   // Fire neural network animation for predicted class
@@ -1766,8 +2716,134 @@ function predict() {
   display.classList.add('show');
 }
 
-// Auto-run predictor on load
-window.addEventListener('load', () => setTimeout(predict, 800));
+// ── ARCH VISUAL RENDERER ──
+(function() {
+  const archData = [
+    { name: 'Input Layer', sub: 'shape: (4,)', neurons: 4, activation: '—', params: '0', color: '#0284c7', icon: '↘', desc: 'Sepal/petal length & width' },
+    { name: 'Dense_1', sub: 'Hidden Layer 1', neurons: 10, activation: 'ReLU', params: '50', color: '#c026d3', icon: '⚡', desc: '4×10 weights + 10 bias' },
+    { name: 'Dense_2', sub: 'Hidden Layer 2', neurons: 8, activation: 'ReLU', params: '88', color: '#c026d3', icon: '⚡', desc: '10×8 weights + 8 bias' },
+    { name: 'Output', sub: 'Dense_3', neurons: 3, activation: 'Softmax', params: '27', color: '#ea580c', icon: '🎯', desc: 'Setosa · Versicolor · Virginica' }
+  ];
+
+  const container = document.getElementById('archLayers');
+  if (!container) return;
+
+  archData.forEach((layer, idx) => {
+    // Layer block
+    const block = document.createElement('div');
+    block.className = 'arch-layer-block';
+
+    // Neuron dots (cap at 10)
+    const displayN = Math.min(layer.neurons, 10);
+    const dotsHTML = Array.from({length: displayN}, () =>
+      `<div class="arch-neuron-dot" style="background:${layer.color}"></div>`
+    ).join('') + (layer.neurons > 10 ? `<div style="font-family:'Space Mono',monospace;font-size:0.55rem;color:var(--muted);width:100%;text-align:center;margin-top:2px;">+${layer.neurons-10}</div>` : '');
+
+    block.innerHTML = `
+      <div class="arch-layer-pill" style="background:color-mix(in srgb,${layer.color} 12%,transparent);border:2px solid ${layer.color};color:${layer.color};box-shadow:0 0 24px color-mix(in srgb,${layer.color} 20%,transparent);">
+        ${layer.neurons}
+      </div>
+      <div class="arch-layer-name" style="color:${layer.color}">${layer.name}</div>
+      <div class="arch-layer-sub">${layer.sub}</div>
+      <div class="arch-layer-neurons">${dotsHTML}</div>
+      <div class="arch-layer-params" style="border-color:color-mix(in srgb,${layer.color} 20%,transparent);color:${layer.color}">
+        act: ${layer.activation} · ${layer.params}p
+      </div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.58rem;color:var(--muted);margin-top:8px;text-align:center;">${layer.desc}</div>
+    `;
+
+    // Animate neuron dots on hover
+    block.querySelectorAll('.arch-neuron-dot').forEach((dot, di) => {
+      dot.style.animationDelay = (di * 0.06) + 's';
+    });
+
+    container.appendChild(block);
+
+    // Connector between layers
+    if (idx < archData.length - 1) {
+      const conn = document.createElement('div');
+      conn.className = 'arch-layer-connector';
+      conn.innerHTML = `<svg viewBox="0 0 40 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="6" x2="32" y2="6" stroke="url(#cg${idx})" stroke-width="1.5" stroke-dasharray="4 2"/>
+        <polygon points="32,2 40,6 32,10" fill="${archData[idx+1].color}" opacity="0.6"/>
+        <defs>
+          <linearGradient id="cg${idx}" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="${layer.color}" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="${archData[idx+1].color}" stop-opacity="0.8"/>
+          </linearGradient>
+        </defs>
+      </svg>`;
+      container.appendChild(conn);
+    }
+  });
+})();
+
+// ── PREP STEP SELECTOR ──
+function selectPrepStep(n) {
+  document.querySelectorAll('.prep-step').forEach((el, i) => {
+    el.classList.toggle('active', i === n);
+  });
+  document.querySelectorAll('.prep-detail').forEach((el, i) => {
+    el.classList.toggle('active', i === n);
+  });
+}
+
+// Auto-cycle prep steps
+let prepStepIdx = 0;
+setInterval(() => {
+  // Only auto-cycle if user hasn't clicked
+}, 3000);
+
+// ── NAV: scroll progress + spy + mobile toggle ──
+(function() {
+  const nav      = document.getElementById('siteNav');
+  const progress = document.getElementById('navProgress');
+  const links    = document.querySelectorAll('.nav-link[data-section]');
+  const sections = ['dataset','pipeline','architecture','preprocessing','training','results','predictor','team'];
+
+  function onScroll() {
+    const scrollTop = window.scrollY;
+    const docH      = document.documentElement.scrollHeight - window.innerHeight;
+    const pct       = docH > 0 ? (scrollTop / docH) * 100 : 0;
+    progress.style.width = pct + '%';
+
+    nav.classList.toggle('scrolled', scrollTop > 10);
+
+    // Scroll spy — find which section is currently in view
+    let active = '';
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 90) active = id;
+    }
+
+    links.forEach(link => {
+      const isHighlight = link.classList.contains('nav-link--highlight');
+      link.classList.toggle('active', link.dataset.section === active);
+      // keep highlight button always styled correctly
+      if (isHighlight && link.dataset.section !== active) {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+function toggleMobileNav() {
+  const links = document.getElementById('navLinks');
+  const btn   = document.getElementById('navHamburger');
+  links.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+// Close mobile nav when a link is clicked
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('navHamburger').classList.remove('open');
+  });
+});
 </script>
 </body>
 </html>
